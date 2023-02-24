@@ -1,8 +1,8 @@
+<%= cl_image_tag(@list.photo.key,
+      width: 150, crop: :thumb, gravity: :face) %>
 <h1><%= @list.name %></h1>
 <% @list.movies.each do |movie| %>
 <h3><%= movie.title %></h3>
-<%= cl_image_tag(movie.poster_url,
-      width: 150, crop: :thumb, gravity: :face) %>
 <p><%= movie.overview %></p>
 <% bookmark = Bookmark.find_by(movie: movie, list: @list) %>
 <p>Comment : <%= bookmark.comment %></p>
